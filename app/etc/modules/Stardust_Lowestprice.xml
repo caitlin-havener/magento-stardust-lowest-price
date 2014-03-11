@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Stardust_Lowestprice>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.0.1</version>
+    </Stardust_Lowestprice>
+  </modules>
+</config>

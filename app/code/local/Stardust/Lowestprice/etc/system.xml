@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<config>
+	  <sections>
+		<lowest_price  translate="label" module="lowestprice">                    
+		<label>Lowest Price</label>
+		<tab>catalog</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>0</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <lowest_price_group translate="label"> 
+					  <label>Lowest Price Settings</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>0</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <lowest_threshold translate="label">
+                            <label>Set lowest price you will go</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>percent over cost or dollar amount here number only, specify unit below</comment>
+                          </lowest_threshold>
+                          <lowest_threshold_unit translate="label">
+                            <label>Percent or Dollar Amount</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_Diyoptions13944855611</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </lowest_threshold_unit>
+                          <lowest_price_compare_attr translate="label">
+                            <label>Attribute to specify cost of product (Optional. By default cost is defined as half of price)</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </lowest_price_compare_attr>
+					   </fields>
+					   </lowest_price_group>
+				      <semantics3_api translate="label"> 
+					  <label>Semantics3 API Settings</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>0</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <semantics_api_key translate="label">
+                            <label>Semantics3 API Key</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </semantics_api_key>
+                          <semantics_api_secret translate="label">
+                            <label>Semantics3 API Secret</label>
+							<frontend_type>password</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </semantics_api_secret>
+                          <semantics_api_number translate="label">
+                            <label>Max Amount of Queries per Month</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Will have to keep track in table</comment>
+                          </semantics_api_number>
+                          <semantics_run_job translate="label">
+                            <label>How Often Do you want to run Price check?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_Diyoptions13944855616</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Offer Query number estimate</comment>
+                          </semantics_run_job>
+					   </fields>
+					   </semantics3_api>
+					</groups>
+		</lowest_price>
+	  </sections>
+</config>

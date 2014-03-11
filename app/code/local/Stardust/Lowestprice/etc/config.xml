@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Stardust_Lowestprice>
+      <version>0.0.1</version>
+    </Stardust_Lowestprice>
+  </modules>
+  <global>
+    <helpers>
+      <lowestprice>
+        <class>Stardust_Lowestprice_Helper</class>
+      </lowestprice>
+    </helpers>
+	<blocks>
+	  <lowestprice>
+		<class>Stardust_Lowestprice_Block</class>
+	  </lowestprice>
+	</blocks>
+	<resources>
+	  <lowestprice_setup>
+		<setup>
+		  <module>Stardust_Lowestprice</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </lowestprice_setup>
+	  <lowestprice_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </lowestprice_write>
+	  <lowestprice_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </lowestprice_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <lowestprice>
+	    <use>admin</use>
+		<args>
+		  <module>Stardust_Lowestprice</module>
+		  <frontName>lowestprice</frontName>
+		</args>
+	  </lowestprice>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <lowestprice module="lowestprice">
+		<title>Lowestprice</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <lowestpricebackend module="lowestprice">
+			<title>Lowest Price Settings</title>
+			<sort_order>0</sort_order>
+			<action>lowestprice/adminhtml_lowestpricebackend</action>
+		  </lowestpricebackend>
+		</children>
+	  </lowestprice>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<lowestprice translate="title" module="lowestprice">
+			  <title>Lowestprice</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <lowestpricebackend translate="title">
+			<title>Lowest Price Settings</title>
+		  </lowestpricebackend>
+			  </children>
+			</lowestprice>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<lowestprice>
+		  <file>lowestprice.xml</file>
+		</lowestprice>
+	  </updates>
+	</layout>
+  </adminhtml>    
+    <crontab>
+        <jobs>            
+			<lowestprice_runpricecheck>
+                <schedule><cron_expr>0 0 * * *</cron_expr></schedule>
+                <run><model>lowestprice/cron::runPriceCheck</model></run>
+            </lowestprice_runpricecheck>
+        </jobs>
+    </crontab>
+</config> 
